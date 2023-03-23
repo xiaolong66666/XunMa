@@ -1,0 +1,231 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="xiaolong" content="order by dede58.com/" />
+<title>寻码科技</title>
+<link rel="icon" href="/images/BG.jpg">
+<link href="css/style.css" rel="stylesheet">
+<link href="css/animation.css" rel="stylesheet">
+<link href="css/lrtk.css" rel="stylesheet" />
+<!--element-ui的样式-->
+<link rel="stylesheet" href="element-ui/index.css" />
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/js.js"></script>
+    <style>
+        .el-carousel__item h3 {
+            /*color: #475669;*/
+            font-size: 14px;
+            opacity: 0.75;
+            line-height: 200px;
+            margin: 0;
+        }
+
+        .el-carousel__item:nth-child(2n) {
+            /*background-color: #99a9bf;*/
+        }
+
+        .el-carousel__item:nth-child(2n+1) {
+            /*background-color: #d3dce6;*/
+        }
+        .time {
+            font-size: 13px;
+            color: #e59b3b;
+        }
+
+        .bottom {
+            margin-top: 13px;
+            line-height: 12px;
+        }
+        .clearfix:before,
+        .clearfix:after {
+            display: table;
+            content: "";
+        }
+
+        .clearfix:after {
+            clear: both
+        }
+    </style>
+</head>
+<body>
+<header>
+	<nav id="nav">
+        <h1 style="font-style:italic">寻码科技</h1>
+         <script src="js/silder.js"></script><!--获取当前页导航 高亮显示标题--> 
+    </nav>
+</header>
+
+<div id="mainbody">
+<!--    走马灯-->
+    <template>
+        <el-carousel :interval="4000" type="card" height="200px" autoplay interval="2000">
+            <el-carousel-item v-for="item in 6" :key="item">
+                <!--                <h3 class="medium">{{ item }}</h3>-->
+                <img style="height:200px;width:280px;opacity:0"/>
+                <img src="images/BG.jpg"/>
+                <img style="height:200px;width:50px;opacity:0"/>
+                <img src="images/BG.jpg"/>
+            </el-carousel-item>
+        </el-carousel>
+    </template>
+<!--        </template-->
+	<div class="info">
+        <figure>
+            <img src="images/art.jpg">
+            <figcaption>
+                <strong>所有成就和财富都基于认知</strong>
+                当你刻意地去做一件事，这是显意识的结果。我们需要把它们变成自发的意识，或者说潜意识，习惯渐成自然，这些新的行动又渐渐变成了自然的习惯，继而成为潜意识，从显意识到潜意识的转变，其实就是从刻意到自觉再到习惯的改变。
+            </figcaption>
+        </figure>
+        <div class="card">
+        	 <h1>XunMa</h1>
+              <p>名称：寻码科技</p>
+              <p>业务：代码服务(所有编程语言)</p>
+              <p>微信公众号：寻码科技官方平台</p>
+            <hr><br>
+              <div style="width: 100%">
+                  <el-button type="warning" size="mini" round><el-link type="primary" href="https://doc.weixin.qq.com/doc/w3_AR4ABwYwACgm0fxi998TkKRAB4lt0?scode=AKYAJgeNABwSvqrimtAe4ATAaDAJY">接单须知</el-link></el-button>
+                  <el-button type="warning" size="mini" round><el-link type="primary" href="https://doc.weixin.qq.com/doc/w3_AR4ABwYwACgGU9t5vA4TP0QwhpKvG?scode=AKYAJgeNABwLRcI4hhAe4ATAaDAJY">客户须知</el-link></el-button>
+                  <el-button type="warning" size="mini" round><el-link type="primary" href="https://work.weixin.qq.com/kfid/kfceea9ab97632926d2">官方客服</el-link></el-button><br>
+                  <h3>(找到代写？技术人员兼职？就来寻码科技)</h3>
+              </div>
+        </div>
+    </div>
+
+<!--info结束-->
+
+<!--博客的列表开始-->
+    <div class="blogs">
+        <ul class="bloglist">
+            <li>
+                <div class="row_box" style="border: 6px" v-for="item in report">
+                    <div class="ti"></div><!--三角形-->
+                    <div class="ci"></div><!--圆形-->
+                    <h5>{{item.createTime}}</h5>
+                    <h2 class="title" style="color: orange">{{item.title}}</h2>
+                    <ul class="textinfo">
+                        <img src="images/gzh.jpg">
+                        <p>{{item.text}}</p>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    <!--右半部分开始-->
+        <aside>
+            <div class="search">
+                <el-input placeholder="请输入标题" v-model="title" class="input-with-select">
+                    <el-button size="mini" slot="append" icon="el-icon-search" @click="selectOne(title)"></el-button>
+                </el-input>
+            </div>
+            <div class="tuijian" style="height: 650px">
+                <h2 style="font-style:italic">"寻码科技"简介</h2><br>
+                <h2>平台特点："价格实惠"、"过硬技术"、"高质量服务","团队规模1k+"</h2><hr>
+                <el-link type="warning"href="https://doc.weixin.qq.com/doc/w3_AR4ABwYwACgGU9t5vA4TP0QwhpKvG?scode=AKYAJgeNABwLRcI4hhAe4ATAaDAJY"> <h3>1,客户须知</h3></el-link>
+                <p>(1)如有代码需求，可按照”具体需求内容+交付时间“+预算“的格式发送至平台管理员</p>
+                <p>(2)怎么定价？
+                    平台会根据代码具体难度确定价格（平台价格至少比淘宝、拼多多等电商平台便宜1/3）
+                </p>
+                <p>(3)怎么付款？
+                    在付款之前，平台会为该订单确定好技术人员，确定好之后再进行付款。低于200的订单，平台将使用“企业微信”收取全款；高于两百的订单，平台将根据进度进行分批收款（如“客户”对平台不信任，可进行咸鱼等第三方平台进行收款）
+                </p>
+                <p>(4)收款成功后，平台会通过建群的方式直接安排”技术人员“进行服务
+                </p>
+                <p>(5)“客户”收到成品后，后期如有售后需求可在前期建立的服务群直接咨询技术人员
+                </p>
+                <br>
+                <el-link type="warning" href="https://doc.weixin.qq.com/doc/w3_AR4ABwYwACgm0fxi998TkKRAB4lt0?scode=AKYAJgeNABwSvqrimtAe4ATAaDAJY"><h3>2,接单须知</h3></el-link>
+                <p>(1)平台订单将统一在接单群派出，“技术人员”须在个人能力范围内进行接单</p>
+                <p>(2)”技术人员“在确定接单后可在接单群扣“1”，避免重复接单（确定后可直接与派单人员进行对接）
+                </p>
+                <p>(3)一般情况下，平台对于每个订单都会采取直接将“客户”与“技术人员”直接拉群的形式进行对接，待“客户”满意后方可结账；特殊情况，”技术人员“须按照“演示视频+代码+文档”的格式发给派单管理员，核实好之后方可结账
+                </p>
+                <p>(4)“技术人员”在完成订单结账后，须负责解决”客户“的售后问题（特殊要求可向“客户”要求加价）
+                </p><br>
+            </div>
+<!--            插入logo-->
+        </aside>
+	</div>
+    <hr>
+    <div style="display: flex">
+        <div class="tuijian" style="height: 200px;width:50%;overflow-y: auto;overflow-x:hidden;">
+            <h2 style="color: orange">所有公告</h2>
+            <ol v-for="(item,index) in total_report">
+                <li @click="selectOne(item.title)"><span> <strong>{{index+1}}</strong></span>{{item.title}}</li>
+            </ol>
+        </div>
+        <div class="clicks" style="height: 200px;overflow-y: auto;overflow-x:hidden;width: 50%">
+            <h2 style="color: orange">常用工具</h2>
+            <ol v-for="item in tools">
+                <li><span>慢生活</span><a style="color: green" :href="item.url">{{item.name}}</a></li>
+            </ol>
+        </div>
+    </div>
+    <!--blogs结束-->
+</div>
+<!-- 开发环境版本，包含了有帮助的命令行警告 -->
+<script src="js/vue.js"></script>
+<!-- 引入组件库 -->
+<script src="element-ui/index.js"></script>
+<!-- 引入axios -->
+<script src="js/axios.min.js"></script>
+</body>
+<script>
+    new Vue({
+        el:'#mainbody',
+        data(){
+            return {
+                title:'',
+                tools:[],
+                report:[],
+                total_report:[]
+            }
+        },
+        created(){
+            this.initData('');
+            this.initTools();
+        },
+        mounted(){
+
+        },
+        methods:{
+            //初始化数据
+            initData(){
+                let self_=this;
+                axios.get("/report/list").then((resp)=>{
+                    if (resp.data.code === 1){
+                        self_.report=resp.data.data
+                        self_.total_report=resp.data.data
+                    }else {
+                        this.$message.error("服务器未知异常！")
+                    }
+                })
+            },
+            //点击下方公告实现跳转
+            selectOne(title){
+                let self_=this;
+                axios.get("/report/list?title="+title).then((resp)=>{
+                    if (resp.data.code === 1){
+                        self_.report=resp.data.data
+                    }else {
+                        this.$message.error("服务器未知异常！")
+                    }
+                })
+            },
+            //加载热门应用
+            initTools(){
+                let self_=this;
+                axios.get("/tool/list").then((resp)=>{
+                    if (resp.data.code === 1){
+                        self_.tools=resp.data.data
+                    }else {
+                        this.$message.error("服务器未知异常！")
+                    }
+                })
+            }
+
+        }
+    })
+</script>
+</html>
+
